@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Gastos Pessoais</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Controle de Gastos Pessoais</h1>
+
+  <div class="container">
+
+    <div class="card">
+      <h2>Adicionar Gasto</h2>
+      <div class="form">
+        <input type="text" id="descricao" placeholder="Descrição do gasto">
+        <input type="number" id="valor" placeholder="Valor (R$)">
+
+        <select id="cartao">
+          <option value="">Forma de pagamento</option>
+          <option value="Crédito">Crédito</option>
+          <option value="Débito">Débito</option>
+          <option value="Pix">Pix</option>
+          <option value="Dinheiro">Dinheiro</option>
+        </select>
+
+        <input type="text" id="local" placeholder="Onde foi pago">
+
+        <button onclick="adicionarGasto()">Adicionar</button>
+        <button onclick="exportarPlanilha()">Exportar para Planilha</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Total Gasto</h2>
+      <p class="total">R$ <span id="total">0.00</span></p>
+    </div>
+
+    <!-- DASHBOARD i think -->
+    <div class="dashboard">
+      <div class="card">
+        <h3>Total Geral</h3>
+        <p class="total">R$ <span id="totalGeral">0.00</span></p>
+      </div>
+
+      <div class="card">
+        <h3>Por Forma de Pagamento</h3>
+        <ul id="porCartao"></ul>
+      </div>
+
+      <div class="card">
+        <h3>Por Local</h3>
+        <ul id="porLocal"></ul>
+      </div>
+    </div>
+
+    <!-- CARD: LISTA -->
+    <div class="card">
+      <h2>Lista de Gastos</h2>
+      <ul id="lista"></ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
